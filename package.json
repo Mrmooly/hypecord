@@ -1,0 +1,59 @@
+{
+  "name": "hypecord",
+  "private": true,
+  "version": "0.1.0-beta.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "electron:build": "npm run build && electron-builder --win"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.112.4",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "electron-updater": "^6.6.2"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react": "^6.1.0",
+    "oxlint": "^1.79.0",
+    "vite": "^8.2.2",
+    "electron": "^39.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "main": "electron/main.cjs",
+  "build": {
+    "appId": "com.hypecord.app",
+    "productName": "Hypecord",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "asar": true,
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "perMachine": false
+    },
+    "publish": {
+      "provider": "github",
+      "owner": "Mrmooly",
+      "repo": "hypecord",
+      "releaseType": "prerelease",
+      "channel": "beta"
+    }
+  }
+}
