@@ -27,8 +27,9 @@
   },
   "main": "electron/main.cjs",
   "build": {
-    "appId": "com.hypecord.app",
-    "productName": "Hypecord",
+  "appId": "com.hypecord.app",
+  "productName": "Hypecord",
+  "generateUpdatesFilesForAllChannels": true,
     "directories": {
       "output": "release"
     },
